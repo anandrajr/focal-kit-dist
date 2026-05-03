@@ -16,7 +16,7 @@ runtime dependencies beyond AVFoundation and Vision.
 In Xcode: **File - Add Package Dependencies...** and enter:
 
 ```
-https://github.com/anandrajr/focal-kit-dist.git
+https://github.com/anandrajr/focal-kit-ios-sdk.git
 ```
 
 Choose the **Up to Next Major Version** rule and start from the latest tagged
@@ -26,13 +26,13 @@ release.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/anandrajr/focal-kit-dist.git", from: "0.1.0")
+    .package(url: "https://github.com/anandrajr/focal-kit-ios-sdk.git", from: "0.1.0")
 ],
 targets: [
     .target(
         name: "YourApp",
         dependencies: [
-            .product(name: "FocalKit", package: "focal-kit-dist")
+            .product(name: "FocalKit", package: "focal-kit-ios-sdk")
         ]
     )
 ]
@@ -105,3 +105,4 @@ inside each release archive. The contents of *this* repository
 
 Issues, feature requests, and integration questions:
 [ARRcade contact](https://arrcade.dev).
+
