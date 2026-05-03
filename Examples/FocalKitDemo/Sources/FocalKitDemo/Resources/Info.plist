@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSCameraUsageDescription</key>
+	<string>FocalKit Demo uses the camera to demonstrate barcode scanning in real time.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>FocalKit Demo reads a photo you choose to demonstrate static barcode decoding without opening the camera.</string>
+</dict>
+</plist>
