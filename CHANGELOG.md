@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `FocalKit` library target supporting iOS 17+.
 - Automated release pipeline: `build-xcframework.sh` compiles and zips the
   XCFramework; `release-xcframework.sh` creates the GitHub Release, uploads
-  the asset to `focal-kit-dist`, and rewrites `Package.swift` with the new
+  the asset to `focal-kit-ios-sdk`, and rewrites `Package.swift` with the new
   version and SHA-256 checksum.
 - DocC documentation hosted at arrcade.dev/docs/focalkit/.
+
