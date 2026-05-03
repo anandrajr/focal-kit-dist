@@ -38,6 +38,45 @@ targets: [
 ]
 ```
 
+## Quick start
+
+```swift
+import FocalKit
+
+// 1. Request camera permission (call once at app launch)
+let status = await CaptureContext.requestCameraAccess()
+guard status == .authorized else { /* handle denial */ return }
+
+// 2. Create the context and capture facade
+let context = try CaptureContext()
+let capture = BarcodeCapture(context: context, settings: .init())
+
+// 3. Drop the view into your SwiftUI hierarchy
+BarcodeCaptureView(capture: capture)
+    .onBarcodeScanned { barcode in
+        print(barcode.symbology, barcode.payload)
+    }
+    .overlay(BarcodeCaptureOverlay(style: .defaultHighlight))
+    .ignoresSafeArea()
+```
+
+Remember to add `NSCameraUsageDescription` to your app's `Info.plist`.
+
+## Example app
+
+A runnable Swift Package demo is included in [`Examples/FocalKitDemo/`](Examples/FocalKitDemo/).
+It covers every major API surface — live scanning, listener protocol, single
+symbology, torch control, region of interest, duplicate filtering, static image
+decode, and camera permission handling.
+
+To run it:
+
+```
+open Examples/FocalKitDemo/Package.swift
+```
+
+See [`Examples/FocalKitDemo/README.md`](Examples/FocalKitDemo/README.md) for the full screen map.
+
 ## Versioning
 
 This repo's tags mirror the source repo's tags one-for-one. Every `vX.Y.Z` here
@@ -60,7 +99,7 @@ API documentation is published at
 
 Distribution of the FocalKit XCFramework is governed by the licence shipped
 inside each release archive. The contents of *this* repository
-(`Package.swift`, `README.md`) are MIT licensed.
+(`Package.swift`, `README.md`, `Examples/`) are MIT licensed.
 
 ## Reporting issues
 
